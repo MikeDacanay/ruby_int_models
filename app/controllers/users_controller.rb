@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    render text: "#{params[:id]}"
+    @user =  User.find(params[:id]).name
+    render "user/edit"
+    # render text: "#{params[:id]}"
   end
 
   def total
