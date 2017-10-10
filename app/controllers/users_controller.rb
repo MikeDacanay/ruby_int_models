@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    render json: User.all
   end
 
   def new
@@ -7,16 +8,18 @@ class UsersController < ApplicationController
   end
 
   def detail
+    render json: User.find(params[:id])
   end
 
   def edit
+    render text: "#{params[:id]}"
   end
 
   def total
   end
 
   def add
-    # puts "got here"
-    render text: "came to create method"
+    @user = User.create( name: params[:name] )
+    redirect_to "/users/show"
   end
 end

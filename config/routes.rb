@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  get 'users/show' => 'users#show'
 
   get 'users/new' => 'users#new'
   
   post "users" => 'users#add'
 
-  get 'users/detail'
+  get 'users(/:id)' => 'users#detail'
 
-  get 'users/edit'
+  get 'users(/:id)/edit' => 'users#edit'
 
   get 'users/total'
 
