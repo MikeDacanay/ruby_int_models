@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def total
+    render text: User.all.length
   end
 
   def add

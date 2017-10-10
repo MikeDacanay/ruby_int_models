@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   
   post "users" => 'users#add'
 
+  get 'users/total' => 'users#total'
+
   get 'users(/:id)' => 'users#detail'
 
   get 'users(/:id)/edit' => 'users#edit'
 
-  get 'users/total'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
